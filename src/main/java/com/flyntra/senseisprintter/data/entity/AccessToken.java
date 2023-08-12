@@ -13,6 +13,7 @@ public class AccessToken {
     private Long id;
     @Column(nullable = false, unique = true)
     @OneToOne
+    @JoinColumn(name="userid", referencedColumnName = "id")
     private User user;
     @Column(nullable = false, unique = true)
     private String token;
