@@ -1,23 +1,18 @@
 package com.flyntra.senseisprintter.controller;
 
+import com.flyntra.senseisprintter.service.BacklogService;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
 
 @RestController
 public class Backlog {
 
-    @GetMapping
-    public ResponseEntity<String> register() {
-        WebClient webClient = WebClient.create(); // this will move in service class as business logic
-        String url = "";
-        Mono<String> response = webClient.get()
-                .uri(url)
-                .retrieve()
-                .bodyToMono(String.class);
-        String json = response.block();
-        return ResponseEntity.ok("asdasd");
+    @GetMapping(value = "/getTable", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> getJiraData(@RequestParam String tableId) {
+        String data = BacklogService.getJsonDataFromJira(tableId);
+        return ResponseEntity.ok(BacklogService.parseTheData(data));
     }
 }
