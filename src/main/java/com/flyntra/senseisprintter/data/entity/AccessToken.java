@@ -11,10 +11,10 @@ public class AccessToken {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false, unique = true)
+
     @OneToOne
-    @JoinColumn(name="userid", referencedColumnName = "id")
-    private User user;
+    @PrimaryKeyJoinColumn(name="userid", referencedColumnName = "id")
+    private User userid;
     @Column(nullable = false, unique = true)
     private String token;
     @Column(nullable = false, unique = true)
@@ -28,14 +28,14 @@ public class AccessToken {
         this.id = id;
     }
 
-
-    public User getUser() {
-        return user;
+    public User getUserid() {
+        return userid;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserid(User userid) {
+        this.userid = userid;
     }
+
 
     public String getToken() {
         return token;

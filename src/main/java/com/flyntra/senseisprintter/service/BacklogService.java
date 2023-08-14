@@ -4,14 +4,16 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
+@Service
 public class BacklogService {
 
-    private static final String URL = "http://localhost:8095/jira/rest/greenhopper/1.0/xboard/work/allData.json";
+    private final String URL = "http://localhost:8095/jira/rest/greenhopper/1.0/xboard/work/allData.json";
 
-    public static String getJsonDataFromJira(String rapidViewId) {
+    public String getJsonDataFromJira(String rapidViewId) {
         WebClient webClient = WebClient.create(); // this will move in service class as business logic
         String url = URL + "?rapidViewId="+rapidViewId;
         Mono<String> response = webClient.get()
@@ -22,7 +24,7 @@ public class BacklogService {
     }
 
 
-    public static String parseTheData(String json) {
+    public String parseTheData(String json) {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         try {

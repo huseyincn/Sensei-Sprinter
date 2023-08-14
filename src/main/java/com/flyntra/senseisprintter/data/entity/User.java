@@ -3,7 +3,7 @@ package com.flyntra.senseisprintter.data.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="userlist")
+@Table(name = "userlist")
 public class User {
 
     @Id
@@ -17,6 +17,15 @@ public class User {
     private String password;
 
     // I DON'T ADD LOMBOK AS DEPENDENCY SO
+
+    public User() {
+    }
+
+    public User(String userName, String email, String password) {
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+    }
 
     public Long getId() {
         return id;
