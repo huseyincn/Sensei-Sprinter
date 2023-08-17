@@ -1,6 +1,6 @@
 package com.flyntra.senseisprintter.controller;
 
-import com.flyntra.senseisprintter.service.BacklogService;
+import com.flyntra.senseisprintter.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class BacklogController {
+public class BoardController {
 
     @Autowired
-    BacklogService backlogService;
-    @GetMapping(value = "/getTable", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> getJiraData(@RequestParam String tableId) { // şimdilik sprint id diyelim ilerde burdan project key girecek issuelar çıkacak
-        String data = backlogService.getIssuesFromSprint(tableId);
+    BoardService boardService;
+
+    @GetMapping(value = "/getBoard", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> getSpringDatas(@RequestParam String name) {
+        String data = boardService.getBoardsFilteredWithName(name);
         if (data != null)
             return ResponseEntity.ok(data);
         else

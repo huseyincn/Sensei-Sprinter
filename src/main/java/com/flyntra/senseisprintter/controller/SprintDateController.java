@@ -1,6 +1,6 @@
 package com.flyntra.senseisprintter.controller;
 
-import com.flyntra.senseisprintter.service.BacklogService;
+import com.flyntra.senseisprintter.service.SprintDateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -9,14 +9,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class BacklogController {
+public class SprintDateController {
 
     @Autowired
-    BacklogService backlogService;
-    @GetMapping(value = "/getTable", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> getJiraData(@RequestParam String tableId) { // şimdilik sprint id diyelim ilerde burdan project key girecek issuelar çıkacak
-        String data = backlogService.getIssuesFromSprint(tableId);
-        if (data != null)
+    SprintDateService sprintDateService;
+
+    @GetMapping(value = "/getSprint", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> getSpringDatas(@RequestParam String boardId) {
+        String data = sprintDateService.getActiveSprintDetails(boardId);
+        if(data != null)
             return ResponseEntity.ok(data);
         else
             return ResponseEntity.internalServerError().body("{\"error\":\"Jira is not accessible right now. I guess???\"}");

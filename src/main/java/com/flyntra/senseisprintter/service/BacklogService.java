@@ -4,10 +4,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,26 +16,17 @@ import java.util.List;
 @Service
 public class BacklogService {
 
+    @Autowired
+    WebClientService webClientService;
+    private final Logger logger = LoggerFactory.getLogger(BacklogService.class);
+
     // This Constant Strings json property keys for parsing
     public static final String SUBTASKS = "subtasks";
     public static final String SUMMARY = "summary";
     public static final String ASSIGNEE = "assignee";
     public static final String STATUS = "status";
     public static final String LABELS = "labels";
-
-    @Autowired
-    private WebClient webClient;
-    private static final String BASEURL = "http://localhost:8095"; // replace with https://sdlc.yaXXXXXXi.com.tr
-    private static final String BOARDIDURL = "/jira/rest/agile/1.0/board";
     private static final String ISSUESFROMSPRINT = "/jira/rest/agile/1.0/sprint/";
-
-    private String getData(String url) {
-        Mono<String> response = webClient.get()
-                .uri(url)
-                .retrieve()
-                .bodyToMono(String.class); // .headers(h -> h.setBearerAuth(token))
-        return response.block();
-    }
 
     public String getIssuesFromSprint(String sprintId) { // subtaskları bekleyip onları parenta bağlayıp çevirsin
         ObjectMapper mapper = new ObjectMapper();
@@ -52,7 +43,7 @@ public class BacklogService {
             ObjectNode parent = null;
             ArrayNode subtasksNode = mapper.createArrayNode();
             while (startAt < total) {
-                String json = getData(BASEURL + ISSUESFROMSPRINT + sprintId + "/issue?startAt=" + startAt);
+                String json = webClientService.getData(ISSUESFROMSPRINT + sprintId + "/issue?startAt=" + startAt);
                 JsonNode rootNode = mapper.readTree(json);
 
                 startAt = rootNode.get("startAt").asInt();
@@ -79,10 +70,9 @@ public class BacklogService {
                             newIssue.put(ASSIGNEE, calisanSicil);
                             if (!calisanlar.contains(calisanSicil)) {
                                 calisanlar.add(calisanSicil);
-                                ObjectNode calisan = mapper.createObjectNode();
+                                ObjectNode calisan = calisanlarNode.addObject();
                                 calisan.put("Sicil", calisanSicil);
                                 calisan.put("TamAd", assigne.get("displayName").asText());
-                                calisanlarNode.add(calisan);
                             }
                         } else {
                             newIssue.set(ASSIGNEE, null);
@@ -112,19 +102,19 @@ public class BacklogService {
                             }
                             parent = newIssue;
                         } else { // sub tasks değil ve sub taskı yok
+                            newIssue.set(SUBTASKS, mapper.createArrayNode());
                             newIssuesNode.add(newIssue);
                         }
                     }
                 }
                 startAt += whatIGot;
             }
-
             ObjectNode doncekNode = mapper.createObjectNode();
             doncekNode.set("Calisanlar", calisanlarNode);
             doncekNode.set("Tasklar", newIssuesNode);
             return mapper.writeValueAsString(doncekNode);
         } catch (Exception e) {
-            System.out.println(" " + e);
+            logger.error(e.toString());
             return null;
         }
     }

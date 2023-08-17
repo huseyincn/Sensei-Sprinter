@@ -1,21 +1,20 @@
 package com.flyntra.senseisprintter.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
 
 @Service
 public class CozumMerkeziService {
 
+    @Autowired
+    WebClientService webClientService;
+    private final Logger logger = LoggerFactory.getLogger(CozumMerkeziService.class);
     private static final String URL = "COZUM-MERKEZI-API";
 
-    private String getDataFromCozumMerkezi() {
-        WebClient webClient = WebClient.create();
-        String url = URL; // olay yönetimden veri al
-        Mono<String> response = webClient.get()
-                .uri(url)
-                .retrieve()
-                .bodyToMono(String.class);
-        return response.block();
+    public String getCozumMerkeziData() {
+        return URL;
     }
+
 }
