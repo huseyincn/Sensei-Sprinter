@@ -14,7 +14,7 @@ public class SprintDateController {
     @Autowired
     SprintDateService sprintDateService;
 
-    @GetMapping(value = "/getSprint", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/sprint", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getSpringDatas(@RequestParam String boardId) {
         String data = sprintDateService.getActiveSprintDetails(boardId);
         if(data != null)

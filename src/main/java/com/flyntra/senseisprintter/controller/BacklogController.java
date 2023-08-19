@@ -13,7 +13,7 @@ public class BacklogController {
 
     @Autowired
     BacklogService backlogService;
-    @GetMapping(value = "/getTable", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/table", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getJiraData(@RequestParam String tableId) { // şimdilik sprint id diyelim ilerde burdan project key girecek issuelar çıkacak
         String data = backlogService.getIssuesFromSprint(tableId);
         if (data != null)

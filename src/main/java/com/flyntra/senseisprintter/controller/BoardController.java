@@ -14,7 +14,7 @@ public class BoardController {
     @Autowired
     BoardService boardService;
 
-    @GetMapping(value = "/getBoard", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/board", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getSpringDatas(@RequestParam String name) {
         String data = boardService.getBoardsFilteredWithName(name);
         if (data != null)

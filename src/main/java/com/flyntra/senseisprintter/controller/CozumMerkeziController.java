@@ -13,7 +13,7 @@ public class CozumMerkeziController {
     @Autowired
     CozumMerkeziService cozumMerkeziService;
 
-    @GetMapping(value = "/getTickets", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/tickets", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> cozumMerkeziEndpoint() { // olcay Bey ile burası tartışılacak
         String data = cozumMerkeziService.getCozumMerkeziData();
         if (data != null)
