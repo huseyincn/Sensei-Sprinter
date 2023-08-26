@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -14,10 +15,13 @@ import java.util.Random;
 
 @Service
 public class MockTasksService {
+    @Autowired
+    MockTeamService mockTeamService;
     private final Random r = new Random();
     private final Logger logger = LoggerFactory.getLogger(MockTasksService.class);
 
     public String tasklariDagit() {
+        int kisiSayi = mockTeamService.ekibiGetir("").size()+1;
         try {
             List<String[]> mainTasks = getMainTasks();
 
@@ -42,7 +46,7 @@ public class MockTasksService {
                     task.put("id", String.valueOf(r.nextInt(1000000, 9999999)));
                     task.put("key", String.format("STAJ-%4d", r.nextInt(1000, 9999)));
                     task.put("summary", mainTaskName[0] + " - " + subTaskAyetler.remove(r.nextInt(subTaskAyetler.size())));
-                    task.put("assignee", String.format("U%06d", r.nextInt(1, 10)));
+                    task.put("assignee", String.format("U%06d", r.nextInt(1, kisiSayi)));
                     task.put("status", harcananZaman == totalZaman ? "Done" : harcananZaman == 0 ? "To Do" : "In Progress");
                     int tahminiKacGunSurer = r.nextInt(2, 6);
                     int neZamanbaslar = r.nextInt(1, 21 - tahminiKacGunSurer);
@@ -59,17 +63,21 @@ public class MockTasksService {
     }
 
     public String compactTasks() {
+        int kisiSayi = mockTeamService.ekibiGetir("").size()+1;
         try {
             ObjectMapper mapper = new ObjectMapper();
             ArrayNode rtnData = mapper.createArrayNode();
             List<String> subTaskSuffix = getSubTaskListe();
-            for (int i = 1; i < 10; i++) { // tüm kişileri geziyorum sicil nolar 1 den 9 a kadar tasarladım
+            for (int i = 1; i < kisiSayi; i++) { // tüm kişileri geziyorum sicil nolar 1 den 9 a kadar tasarladım
+                ObjectNode kisiVeTasklari = mapper.createObjectNode();
+                kisiVeTasklari.put("sicilNo",String.format("U%06d", i));
                 List<String[]> mainTaskName = getMainTasks();
-                for (int j = 0; j < r.nextInt(6, 12); j++) { // her kişiye task dağıtıyorum
+                ArrayNode tasklar = kisiVeTasklari.putArray("subtasks");
+                for (int j = 0; j < r.nextInt(6, mainTaskName.size()); j++) { // her kişiye task dağıtıyorum
                     int mainTaskRnd = r.nextInt(mainTaskName.size());
                     int totalZaman = r.nextInt(4, 13);
                     int harcananZaman = r.nextInt(totalZaman + 1);
-                    ObjectNode task = rtnData.addObject();
+                    ObjectNode task = tasklar.addObject();
                     task.put("id", String.valueOf(r.nextInt(1000000, 9999999)));
                     task.put("key", String.format("STAJ-%4d", r.nextInt(1000, 9999)));
                     task.put("summary", mainTaskName.get(mainTaskRnd)[0] + " - " + subTaskSuffix.get(r.nextInt(subTaskSuffix.size()))); // genelde subtask atanan kişide benzerlik olur
@@ -78,11 +86,15 @@ public class MockTasksService {
                     int tahminiKacGunSurer = r.nextInt(2, 6);
                     int neZamanbaslar = r.nextInt(1, 21 - tahminiKacGunSurer);
                     task.put("labels", String.format("%d-%d", neZamanbaslar, neZamanbaslar + tahminiKacGunSurer));
+                    task.put("startDate",neZamanbaslar);
+                    task.put("endDate",neZamanbaslar+tahminiKacGunSurer);
                     task.put("totalHour", totalZaman);
                     task.put("timeSpent", harcananZaman);
                     task.put("parentTaskKey", mainTaskName.get(mainTaskRnd)[1]);
+                    task.put("parentTaskDesc", mainTaskName.get(mainTaskRnd)[0]);
                     mainTaskName.remove(mainTaskRnd);
                 }
+                rtnData.add(kisiVeTasklari);
             }
             return mapper.writeValueAsString(rtnData);
         } catch (Exception e) {
