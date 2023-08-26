@@ -73,7 +73,7 @@ public class MockTasksService {
                 kisiVeTasklari.put("sicilNo",String.format("U%06d", i));
                 List<String[]> mainTaskName = getMainTasks();
                 ArrayNode tasklar = kisiVeTasklari.putArray("subtasks");
-                for (int j = 0; j < r.nextInt(6, mainTaskName.size()); j++) { // her kişiye task dağıtıyorum
+                for (int j = 0; j < r.nextInt(6, 12); j++) { // her kişiye task dağıtıyorum
                     int mainTaskRnd = r.nextInt(mainTaskName.size());
                     int totalZaman = r.nextInt(4, 13);
                     int harcananZaman = r.nextInt(totalZaman + 1);
