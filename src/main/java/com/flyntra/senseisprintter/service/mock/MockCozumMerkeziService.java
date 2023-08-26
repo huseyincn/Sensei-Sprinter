@@ -16,7 +16,6 @@ public class MockCozumMerkeziService {
 
     @Autowired
     MockTeamService mockTeamService;
-
     private final Random r = new Random();
     private final Logger logger = LoggerFactory.getLogger(MockCozumMerkeziService.class);
 
@@ -26,29 +25,26 @@ public class MockCozumMerkeziService {
             ObjectNode rtnData = mapper.createObjectNode();
             List<MockTeamService.TeamMate> ekip = mockTeamService.ekibiGetir(ekipOpsiyon);
 
-            int bekleyenCagri = r.nextInt(5,20);
-            int acikCagri = r.nextInt(10,40);
+            int bekleyenCagri = r.nextInt(5, 30);
+            int acikCagri = r.nextInt(10, 40);
 
-            rtnData.put("bekleyenCagri",bekleyenCagri);
-            rtnData.put("acikCagri",acikCagri);
+            rtnData.put("bekleyenCagri", bekleyenCagri);
+            rtnData.put("acikCagri", acikCagri);
             ArrayNode cagriListe = rtnData.putArray("cagrilar");
-            while (bekleyenCagri>0 && ekip.size()!=1) { // tek kişiye kadar çağrıları rasgele dağıt
+            while (bekleyenCagri > 0 && ekip.size() != 1) { // tek kişiye kadar çağrıları rasgele dağıt
                 int rasgeleKisi = r.nextInt(ekip.size());
-                int rasgeleCagriSayi = r.nextInt(1,bekleyenCagri+1);
+                int rasgeleCagriSayi = r.nextInt(1, 5); // en fazla 4 çağrı üstlensin
+                if(rasgeleCagriSayi>bekleyenCagri)
+                    rasgeleCagriSayi=bekleyenCagri;
 
                 ObjectNode cagrici = cagriListe.addObject();
-                cagrici.put("isim",ekip.get(rasgeleKisi).getIsim());
-                cagrici.put("foto",ekip.get(rasgeleKisi).getFoto());
-                cagrici.put("cagriSayisi",rasgeleCagriSayi);
+                cagrici.put("isim", ekip.get(rasgeleKisi).getFname());
+                cagrici.put("foto", ekip.get(rasgeleKisi).getFoto());
+                cagrici.put("cagriSayisi", rasgeleCagriSayi);
                 ekip.remove(rasgeleKisi);
 
-                bekleyenCagri-=rasgeleCagriSayi;
+                bekleyenCagri -= rasgeleCagriSayi;
             } // eğer son kişi kalırsa bütün çağrıları ona yükle
-            ObjectNode cagrici = cagriListe.addObject();
-            cagrici.put("isim",ekip.get(0).getIsim());
-            cagrici.put("foto",ekip.get(0).getFoto());
-            cagrici.put("cagriSayisi",bekleyenCagri);
-            ekip.remove(0);
 
             return mapper.writeValueAsString(rtnData);
         } catch (Exception e) {

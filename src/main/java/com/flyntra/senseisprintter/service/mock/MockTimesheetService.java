@@ -19,22 +19,26 @@ public class MockTimesheetService {
 
     private final Random r = new Random();
     private final Logger logger = LoggerFactory.getLogger(MockTimesheetService.class);
+
     public String mockEksikZamanGiris(String ekipOpsiyon) {
         List<MockTeamService.TeamMate> ekip = mockTeamService.ekibiGetir(ekipOpsiyon);
         try {
             ObjectMapper mapper = new ObjectMapper();
-            ArrayNode rtnData = mapper.createArrayNode();
+            int kacKisi = r.nextInt(7, ekip.size());
+            ObjectNode response = mapper.createObjectNode();
+            response.put("ToplamKisi",kacKisi);
+            ArrayNode rtnData = response.putArray("kisiler");
 
-            for (int i = 0; i < r.nextInt(ekip.size()); i++) {
+            for (int i = 0; i < kacKisi; i++) { // en az 7 kişi gelsin dendi
                 int rndIndex = r.nextInt(ekip.size());
                 ObjectNode calisan = rtnData.addObject();
-                calisan.put("name",ekip.get(rndIndex).getIsim());
-                calisan.put("foto",ekip.get(rndIndex).getFoto());
-                calisan.put("hours",r.nextInt(15));
+                calisan.put("name", ekip.get(rndIndex).getFname());
+                calisan.put("foto", ekip.get(rndIndex).getFoto());
+                calisan.put("hours", r.nextInt(15));
                 ekip.remove(rndIndex);
             }
 
-            return mapper.writeValueAsString(rtnData);
+            return mapper.writeValueAsString(response);
         } catch (Exception e) {
             logger.error("MOCK DATA COULDN'T INITIALIZED.");
             return null;
