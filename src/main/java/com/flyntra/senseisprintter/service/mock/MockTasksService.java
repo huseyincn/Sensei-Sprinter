@@ -51,6 +51,8 @@ public class MockTasksService {
                     int tahminiKacGunSurer = r.nextInt(2, 6);
                     int neZamanbaslar = r.nextInt(1, 21 - tahminiKacGunSurer);
                     task.put("labels", String.format("%d-%d", neZamanbaslar, neZamanbaslar + tahminiKacGunSurer));
+                    task.put("startDate",neZamanbaslar);
+                    task.put("endDate",neZamanbaslar+tahminiKacGunSurer);
                     task.put("totalHour", totalZaman);
                     task.put("timeSpent", harcananZaman);
                 }
@@ -62,7 +64,7 @@ public class MockTasksService {
         }
     }
 
-    public String compactTasks() {
+    public String compactTasks() { // TODO üst üste binmeme check
         int kisiSayi = mockTeamService.ekibiGetir("").size()+1;
         try {
             ObjectMapper mapper = new ObjectMapper();
@@ -84,7 +86,7 @@ public class MockTasksService {
                     task.put("assignee", String.format("U%06d", i)); // sicil buraya
                     task.put("status", harcananZaman == totalZaman ? "Done" : harcananZaman == 0 ? "To Do" : "In Progress");
                     int tahminiKacGunSurer = r.nextInt(2, 6);
-                    int neZamanbaslar = r.nextInt(1, 21 - tahminiKacGunSurer);
+                    int neZamanbaslar = r.nextInt(1, 15 - tahminiKacGunSurer);
                     task.put("labels", String.format("%d-%d", neZamanbaslar, neZamanbaslar + tahminiKacGunSurer));
                     task.put("startDate",neZamanbaslar);
                     task.put("endDate",neZamanbaslar+tahminiKacGunSurer);

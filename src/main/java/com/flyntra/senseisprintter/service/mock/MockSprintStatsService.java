@@ -26,9 +26,9 @@ public class MockSprintStatsService {
             SimpleDateFormat formatter = new SimpleDateFormat("EE MMM d y H:m:s ZZZ");
 
             Calendar cal = Calendar.getInstance();
-            int eksikGun=-1*r.nextInt(1,15);
+            int eksikGun=-1*r.nextInt(4,15);
             cal.add(Calendar.DATE, eksikGun);
-            Date startDate =  cal.getTime();
+            Date startDate =  cal.getTime(); // TODO bunun haftasonu gelmemi ekle
             cal.add(Calendar.DATE, (21));
             Date endDate = cal.getTime();
 
