@@ -49,7 +49,7 @@ public class MockTasksService {
                     task.put("assignee", String.format("U%06d", r.nextInt(1, kisiSayi)));
                     task.put("status", harcananZaman == totalZaman ? "Done" : harcananZaman == 0 ? "To Do" : "In Progress");
                     int tahminiKacGunSurer = r.nextInt(2, 6);
-                    int neZamanbaslar = r.nextInt(1, 21 - tahminiKacGunSurer);
+                    int neZamanbaslar = r.nextInt(1, 15 - tahminiKacGunSurer);
                     task.put("labels", String.format("%d-%d", neZamanbaslar, neZamanbaslar + tahminiKacGunSurer));
                     task.put("startDate",neZamanbaslar);
                     task.put("endDate",neZamanbaslar+tahminiKacGunSurer);
