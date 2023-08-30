@@ -7,12 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.text.SimpleDateFormat;
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Random;
 
 @Service
@@ -20,33 +14,24 @@ public class MockSprintStatsService {
 
     private final Random r = new Random();
     private final Logger logger = LoggerFactory.getLogger(MockSprintStatsService.class);
-    public String mockSpringData() {
+
+    public String mockSpringData(String team) {
         try {
             ObjectMapper mapper = new ObjectMapper();
-            SimpleDateFormat formatter = new SimpleDateFormat("EE MMM d y H:m:s ZZZ");
-
-            Calendar cal = Calendar.getInstance();
-            int eksikGun=-1*r.nextInt(4,15);
-            cal.add(Calendar.DATE, eksikGun);
-            Date startDate =  cal.getTime(); // TODO bunun haftasonu gelmemi ekle
-            cal.add(Calendar.DATE, (21));
-            Date endDate = cal.getTime();
-
             ObjectNode rtnData = mapper.createObjectNode();
-            rtnData.put("id","1635");
-            rtnData.put("boardName","FLYNTRA");
-            rtnData.put("sprintName","1 - Sensei Sprinter");
-            rtnData.put("startDate",formatter.format(startDate));
-            rtnData.put("endDate",formatter.format(endDate));
-
-            ArrayNode wDays = rtnData.putArray("workdays");
-            LocalDate sDate= startDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-            LocalDate eDate = endDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-            while (!sDate.isAfter(eDate)) {
-                if (sDate.getDayOfWeek() != DayOfWeek.SATURDAY && sDate.getDayOfWeek() != DayOfWeek.SUNDAY) {
-                    wDays.add(sDate.getDayOfMonth());
-                }
-                sDate = sDate.plusDays(1);
+            rtnData.put("id", "1635");
+            switch (team) {
+                case "brba":
+                    rtnData.put("boardName", "Mexico");
+                    rtnData.put("sprintName", "1 - Better Call 444 0 444");
+                    break;
+                case "top":
+                    rtnData.put("boardName", "Top Bank");
+                    rtnData.put("sprintName", "5 - Summerhouse");
+                    break;
+                default:
+                    rtnData.put("boardName", "FLYNTRA");
+                    rtnData.put("sprintName", "1 - Sensei Sprinter");
             }
 
             return mapper.writeValueAsString(rtnData);
