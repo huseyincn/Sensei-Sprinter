@@ -30,7 +30,10 @@ public class MockTasksService {
             cal.add(Calendar.DATE, -1);
         }
         Date startDate = cal.getTime();
-        cal.add(Calendar.DATE, (21));
+        cal.add(Calendar.DATE, (20));
+        while (cal.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY || cal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) { // haftasonu gelmeme kontrolü
+            cal.add(Calendar.DATE, -1);
+        }
         Date endDate = cal.getTime();
         return new Date[]{startDate, endDate};
     }
