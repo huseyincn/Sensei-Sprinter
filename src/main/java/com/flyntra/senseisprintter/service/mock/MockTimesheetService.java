@@ -26,7 +26,7 @@ public class MockTimesheetService {
             ObjectMapper mapper = new ObjectMapper();
             int kacKisi = r.nextInt(7, ekip.size());
             ObjectNode response = mapper.createObjectNode();
-            response.put("ToplamKisi",kacKisi);
+            response.put("ToplamKisi", kacKisi);
             ArrayNode rtnData = response.putArray("kisiler");
 
             for (int i = 0; i < kacKisi; i++) { // en az 7 kişi gelsin dendi
@@ -34,7 +34,7 @@ public class MockTimesheetService {
                 ObjectNode calisan = rtnData.addObject();
                 calisan.put("name", ekip.get(rndIndex).getFname());
                 calisan.put("foto", ekip.get(rndIndex).getFoto());
-                calisan.put("hours", r.nextInt(15));
+                calisan.put("hours", r.nextInt(1,15));
                 ekip.remove(rndIndex);
             }
 

@@ -34,8 +34,8 @@ public class MockCozumMerkeziService {
             while (bekleyenCagri > 0 && ekip.size() != 1) { // tek kişiye kadar çağrıları rasgele dağıt
                 int rasgeleKisi = r.nextInt(ekip.size());
                 int rasgeleCagriSayi = r.nextInt(1, 5); // en fazla 4 çağrı üstlensin
-                if(rasgeleCagriSayi>bekleyenCagri)
-                    rasgeleCagriSayi=bekleyenCagri;
+                if (rasgeleCagriSayi > bekleyenCagri)
+                    rasgeleCagriSayi = bekleyenCagri;
 
                 ObjectNode cagrici = cagriListe.addObject();
                 cagrici.put("isim", ekip.get(rasgeleKisi).getFname());
