@@ -18,25 +18,10 @@ import java.util.*;
 public class MockTasksService {
     @Autowired
     MockTeamService mockTeamService;
+    @Autowired
+    DateUtilService dateUtilService;
     private final Random r = new Random();
     private final Logger logger = LoggerFactory.getLogger(MockTasksService.class);
-    private SimpleDateFormat formatter = new SimpleDateFormat("EE MMM d y H:m:s ZZZ");
-
-    private Date[] getDates() {
-        Calendar cal = Calendar.getInstance();
-        int eksikGun = -1 * r.nextInt(4, 15);
-        cal.add(Calendar.DATE, eksikGun);
-        while (cal.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY || cal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) { // haftasonu gelmeme kontrolü
-            cal.add(Calendar.DATE, -1);
-        }
-        Date startDate = cal.getTime();
-        cal.add(Calendar.DATE, (20));
-        while (cal.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY || cal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) { // haftasonu gelmeme kontrolü
-            cal.add(Calendar.DATE, -1);
-        }
-        Date endDate = cal.getTime();
-        return new Date[]{startDate, endDate};
-    }
 
     private int taskDurum(String durum, int totalHour) {
         int ret = 0;
@@ -70,31 +55,13 @@ public class MockTasksService {
             List<String[]> mainTasks = getMainTasks();
 
             ObjectMapper mapper = new ObjectMapper();
-            ObjectNode main = mapper.createObjectNode();
-            Date[] dates = getDates();
-            Date sDate = dates[0];
-            Date eDate = dates[1];
-            main.put("startDate", formatter.format(sDate));
-            main.put("endDate", formatter.format(eDate));
-
-            ArrayNode wDays = main.putArray("workdays");
-            LocalDate sDate1 = sDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-            LocalDate eDate1 = eDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-
-            while (!sDate1.isAfter(eDate1)) {
-                if (sDate1.getDayOfWeek() != DayOfWeek.SATURDAY && sDate1.getDayOfWeek() != DayOfWeek.SUNDAY) {
-                    wDays.add(sDate1.getDayOfMonth());
-                }
-                sDate1 = sDate1.plusDays(1);
-            }
-
+            ArrayNode main = mapper.createArrayNode();
+            Date sDate = dateUtilService.getStartDate();
             LocalDate curDay = new Date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-
-            ArrayNode rtnData = main.putArray("Tasks");
 
             for (String[] mainTaskName : mainTasks) {
                 // bu main taskı rasgele sayıda kişiye assign edicez
-                ObjectNode mainTask = rtnData.addObject();
+                ObjectNode mainTask = main.addObject();
                 mainTask.put("id", String.valueOf(r.nextInt(1000000, 9999999)));
                 mainTask.put("key", mainTaskName[1]);
                 mainTask.put("summary", mainTaskName[0]);
@@ -103,7 +70,7 @@ public class MockTasksService {
                 mainTask.set("labels", null);
                 ArrayNode subTask = mainTask.putArray("subtasks");
                 List<String> subTaskAyetler = getSubTaskListe();
-                for (int i = 0; i < r.nextInt(3, 10); i++) {
+                for (int i = 0; i < r.nextInt(5, subTaskAyetler.size()); i++) { // task başı sub task artırımına gidildi
                     int harcananZaman;
                     int tahminiKacGunSurer = r.nextInt(2, 6);
                     int neZamanbaslar = r.nextInt(1, 15 - tahminiKacGunSurer);
@@ -159,44 +126,25 @@ public class MockTasksService {
         int kisiSayi = mockTeamService.ekibiGetir("").size() + 1;
         try {
             ObjectMapper mapper = new ObjectMapper();
-            ObjectNode main = mapper.createObjectNode();
-            Date[] dates = getDates();
-            Date sDate = dates[0];
-            Date eDate = dates[1];
-
-            main.put("startDate", formatter.format(sDate));
-            main.put("endDate", formatter.format(eDate));
-
-            ArrayNode wDays = main.putArray("workdays");
-            LocalDate sDate1 = sDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-            LocalDate eDate1 = eDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-            while (!sDate1.isAfter(eDate1)) {
-                if (sDate1.getDayOfWeek() != DayOfWeek.SATURDAY && sDate1.getDayOfWeek() != DayOfWeek.SUNDAY) {
-                    wDays.add(sDate1.getDayOfMonth());
-                }
-                sDate1 = sDate1.plusDays(1);
-            }
-
-
+            ArrayNode main = mapper.createArrayNode();
+            Date sDate = dateUtilService.getStartDate();
             LocalDate curDay = new Date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
-            ArrayNode rtnData = main.putArray("Tasks");
             List<String> subTaskSuffix = getSubTaskListe();
             for (int i = 1; i < kisiSayi; i++) { // tüm kişileri geziyorum sicil nolar 1 den 9 a kadar tasarladım
-                ObjectNode kisiVeTasklari = mapper.createObjectNode();
+                ObjectNode kisiVeTasklari = main.addObject();
                 kisiVeTasklari.put("sicilNo", String.format("U%06d", i));
                 List<String[]> mainTaskName = getMainTasks();
                 ArrayNode tasklar = kisiVeTasklari.putArray("subtasks");
                 int neZamanBaslar = 1;
                 int curTask = 1;
-                int taskSayisi = r.nextInt(6, 12);
+                int taskSayisi = r.nextInt(6, mainTaskName.size());
                 while (neZamanBaslar < 16 && curTask < taskSayisi) { // her kişiye task dağıtıyorum
                     int mainTaskRnd = r.nextInt(mainTaskName.size());
                     int totalZaman = r.nextInt(4, 13);
                     int harcananZaman;
                     int tahminiKacGunSurer = r.nextInt(2, 6);
                     int endDate = neZamanBaslar + tahminiKacGunSurer < 16 ? neZamanBaslar + tahminiKacGunSurer : 15;
-
 
                     LocalDate taskSDate = sDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
                     int tmp2 = neZamanBaslar;
@@ -240,7 +188,6 @@ public class MockTasksService {
                     curTask++;
                     neZamanBaslar = endDate + 1;
                 }
-                rtnData.add(kisiVeTasklari);
             }
             return mapper.writeValueAsString(main);
         } catch (Exception e) {
@@ -261,7 +208,16 @@ public class MockTasksService {
                 new String[]{"Banka İçi Destek", "STAJ-6142"},
                 new String[]{"Mikro Uygulamalar Düzeltme", "STAJ-7248"},
                 new String[]{"Sonar Bulguları Geliştirme", "STAJ-1007"},
-                new String[]{"Yatırım Hesapları Geliştirme", "STAJ-8842"}
+                new String[]{"Yatırım Hesapları Geliştirme", "STAJ-8842"},
+                new String[]{"Borsa Mobil Uygulama Geliştirme", "STAJ-9534"},
+                new String[]{"Vadeli Hesap Geliştirme", "STAJ-1674"},
+                new String[]{"Fon Virman Kayıt Tutma", "STAJ-1724"},
+                new String[]{"EFT İzleme Bildirme", "STAJ-8753"},
+                new String[]{"MASAK Oto Bildirim Paneli", "STAJ-4568"},
+                new String[]{"Sprint Planlama Aracı", "STAJ-6448"},
+                new String[]{"Transferler Batch Projesi", "STAJ-2648"},
+                new String[]{"Tablo Güncellemeleri", "STAJ-9452"},
+                new String[]{"KKM Dönüşüm Planlama", "STAJ-1540"}
         ));
     }
 
@@ -276,7 +232,9 @@ public class MockTasksService {
                 "Destek",
                 "Optimization Code With Sonar",
                 "Upgrade Java 8 to 17",
-                "Configuration Optimization"
+                "Configuration Optimization",
+                "Deployment",
+                "Maintenance"
         ));
     }
 

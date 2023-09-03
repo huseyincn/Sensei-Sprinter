@@ -23,7 +23,7 @@ public class MockTaskStatusService {
             ObjectNode rtnData = mapper.createObjectNode();
             rtnData.put("completedTask", completedTask);
             rtnData.put("taskLeft", taskLeft);
-            rtnData.put("percent",Math.round(100*((float) completedTask/(float) (completedTask+taskLeft))));
+            rtnData.put("percent", Math.round(100 * ((float) completedTask / (float) (completedTask + taskLeft))));
 
             return mapper.writeValueAsString(rtnData);
         } catch (Exception e) {
