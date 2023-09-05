@@ -24,7 +24,7 @@ public class MockTimesheetService {
         List<MockTeamService.TeamMate> ekip = mockTeamService.ekibiGetir(ekipOpsiyon);
         try {
             ObjectMapper mapper = new ObjectMapper();
-            int kacKisi = r.nextInt(7, ekip.size());
+            int kacKisi = r.nextInt(ekip.size());
             ObjectNode response = mapper.createObjectNode();
             response.put("ToplamKisi", kacKisi);
             ArrayNode rtnData = response.putArray("kisiler");
