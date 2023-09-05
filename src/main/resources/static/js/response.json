@@ -1,0 +1,868 @@
+{
+  "Calisanlar": [
+    {
+      "Sicil": "U090369",
+      "TamAd": "Çağla Ererdi"
+    },
+    {
+      "Sicil": "U089987",
+      "TamAd": "Selin Özdaş"
+    },
+    {
+      "Sicil": "U087303",
+      "TamAd": "Efe Bozkaya"
+    },
+    {
+      "Sicil": "U089079",
+      "TamAd": "Onur Mamati"
+    },
+    {
+      "Sicil": "U096058",
+      "TamAd": "Aydın Türer"
+    },
+    {
+      "Sicil": "U096285",
+      "TamAd": "Orhun Mengi"
+    },
+    {
+      "Sicil": "U004054",
+      "TamAd": "Firdevs Topal"
+    },
+    {
+      "Sicil": "U095504",
+      "TamAd": "Oytun Kutrup"
+    },
+    {
+      "Sicil": "U085168",
+      "TamAd": "Sümeyye Korkmaz"
+    }
+  ],
+  "Tasklar": [
+    {
+      "id": "1587279",
+      "key": "RISKFREE-4376",
+      "summary": "Sprint Metrics",
+      "assignee": null,
+      "status": "To Do",
+      "labels": []
+    },
+    {
+      "id": "1587270",
+      "key": "RISKFREE-4368",
+      "summary": "Sprint Activities",
+      "assignee": null,
+      "status": "In Progress",
+      "labels": [],
+      "subtasks": [
+        {
+          "id": "1587271",
+          "key": "RISKFREE-4369",
+          "summary": "Activities",
+          "assignee": null,
+          "status": "In Progress",
+          "labels": []
+        },
+        {
+          "id": "1587272",
+          "key": "RISKFREE-4370",
+          "summary": "Refinement",
+          "assignee": null,
+          "status": "In Progress",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "id": "1587273",
+      "key": "RISKFREE-4371",
+      "summary": "Buffer",
+      "assignee": null,
+      "status": "In Progress",
+      "labels": [],
+      "subtasks": [
+        {
+          "id": "1587274",
+          "key": "RISKFREE-4372",
+          "summary": "Hata Giderme",
+          "assignee": null,
+          "status": "In Progress",
+          "labels": []
+        },
+        {
+          "id": "1587275",
+          "key": "RISKFREE-4373",
+          "summary": "Danışmanlık",
+          "assignee": null,
+          "status": "In Progress",
+          "labels": []
+        },
+        {
+          "id": "1587276",
+          "key": "RISKFREE-4374",
+          "summary": "Plansız Eğitim",
+          "assignee": null,
+          "status": "In Progress",
+          "labels": []
+        },
+        {
+          "id": "1587277",
+          "key": "RISKFREE-4375",
+          "summary": "Plansız İzin",
+          "assignee": null,
+          "status": "In Progress",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "id": "1464316",
+      "key": "RISKFREE-3851",
+      "summary": "Manuel Market Data Ekranı ve ilgili süreçlerin Dönüşümü",
+      "assignee": "U090369",
+      "status": "In Progress",
+      "labels": [],
+      "subtasks": [
+        {
+          "id": "1465286",
+          "key": "RISKFREE-3900",
+          "summary": "Manuel Market Data Ekranı ve ilgili süreçlerin Dönüşümü - Analysis",
+          "assignee": "U090369",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1496193",
+          "key": "RISKFREE-4049",
+          "summary": "Manuel Market Data Ekranı ve ilgili süreçlerin Dönüşümü - Analysis",
+          "assignee": "U090369",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1496199",
+          "key": "RISKFREE-4050",
+          "summary": "Manuel Market Data Ekranı ve ilgili süreçlerin Dönüşümü - Development",
+          "assignee": "U089987",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1496200",
+          "key": "RISKFREE-4051",
+          "summary": "Manuel Market Data Ekranı ve ilgili süreçlerin Dönüşümü - Analysis",
+          "assignee": "U087303",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1529883",
+          "key": "RISKFREE-4152",
+          "summary": "Manuel Market Data Ekranı ve ilgili süreçlerin Dönüşümü - Analysis",
+          "assignee": "U090369",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1530401",
+          "key": "RISKFREE-4203",
+          "summary": "Manuel Market Data Ekranı ve ilgili süreçlerin Dönüşümü - Development",
+          "assignee": "U089987",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1556486",
+          "key": "RISKFREE-4277",
+          "summary": "Manuel Market Data Ekranı ve ilgili süreçlerin Dönüşümü - Development",
+          "assignee": "U089987",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1556487",
+          "key": "RISKFREE-4278",
+          "summary": "Manuel Market Data Ekranı ve ilgili süreçlerin Dönüşümü - Analysis",
+          "assignee": null,
+          "status": "Canceled",
+          "labels": []
+        },
+        {
+          "id": "1556488",
+          "key": "RISKFREE-4279",
+          "summary": "Manuel Market Data Ekranı ve ilgili süreçlerin Dönüşümü - Sub-task",
+          "assignee": "U090369",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1587917",
+          "key": "RISKFREE-4446",
+          "summary": "Manuel Market Data Ekranı ve ilgili süreçlerin Dönüşümü - Analysis",
+          "assignee": "U090369",
+          "status": "In Progress",
+          "labels": []
+        },
+        {
+          "id": "1587918",
+          "key": "RISKFREE-4447",
+          "summary": "Manuel Market Data Ekranı ve ilgili süreçlerin Dönüşümü - Development",
+          "assignee": "U089987",
+          "status": "In Progress",
+          "labels": []
+        },
+        {
+          "id": "1587919",
+          "key": "RISKFREE-4448",
+          "summary": "Manuel Market Data Ekranı ve ilgili süreçlerin Dönüşümü - Development",
+          "assignee": "U089079",
+          "status": "On Hold",
+          "labels": []
+        },
+        {
+          "id": "1587920",
+          "key": "RISKFREE-4449",
+          "summary": "Manuel Market Data Ekranı ve ilgili süreçlerin Dönüşümü - Analysis",
+          "assignee": "U087303",
+          "status": "In Progress",
+          "labels": []
+        },
+        {
+          "id": "1588119",
+          "key": "RISKFREE-4464",
+          "summary": "Manuel Market Data Ekranı ve ilgili süreçlerin Dönüşümü - Test",
+          "assignee": "U090369",
+          "status": "In Progress",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "id": "1464154",
+      "key": "RISKFREE-3848",
+      "summary": "Coppclark Entegrasyonu",
+      "assignee": "U089079",
+      "status": "To Do",
+      "labels": [],
+      "subtasks": [
+        {
+          "id": "1556493",
+          "key": "RISKFREE-4281",
+          "summary": "Coppclark Entegrasyonu - Test",
+          "assignee": "U087303",
+          "status": "Canceled",
+          "labels": []
+        },
+        {
+          "id": "1465424",
+          "key": "RISKFREE-3909",
+          "summary": "Coppclark Entegrasyonu - Development",
+          "assignee": "U096058",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1496229",
+          "key": "RISKFREE-4057",
+          "summary": "Coppclark Entegrasyonu - Development",
+          "assignee": "U096058",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1496232",
+          "key": "RISKFREE-4058",
+          "summary": "Coppclark Entegrasyonu - Development",
+          "assignee": "U089987",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1529895",
+          "key": "RISKFREE-4154",
+          "summary": "Coppclark Entegrasyonu - Development",
+          "assignee": "U096058",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1530030",
+          "key": "RISKFREE-4156",
+          "summary": "Coppclark Entegrasyonu - Test",
+          "assignee": "U087303",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1556492",
+          "key": "RISKFREE-4280",
+          "summary": "Coppclark Entegrasyonu - Development",
+          "assignee": "U096058",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1587974",
+          "key": "RISKFREE-4457",
+          "summary": "Coppclark Entegrasyonu - Development",
+          "assignee": "U096058",
+          "status": "To Do",
+          "labels": []
+        },
+        {
+          "id": "1587975",
+          "key": "RISKFREE-4458",
+          "summary": "Coppclark Entegrasyonu - Test",
+          "assignee": "U087303",
+          "status": "To Do",
+          "labels": []
+        },
+        {
+          "id": "1587977",
+          "key": "RISKFREE-4459",
+          "summary": "Coppclark Entegrasyonu - UAT",
+          "assignee": "U087303",
+          "status": "To Do",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "id": "1464155",
+      "key": "RISKFREE-3849",
+      "summary": "Markit Entegrasyonu",
+      "assignee": "U089079",
+      "status": "In Progress",
+      "labels": [],
+      "subtasks": [
+        {
+          "id": "1465404",
+          "key": "RISKFREE-3907",
+          "summary": "Markit Entegrasyonu - Development",
+          "assignee": "U096285",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1465411",
+          "key": "RISKFREE-3908",
+          "summary": "Markit Entegrasyonu - Development",
+          "assignee": "U089987",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1496225",
+          "key": "RISKFREE-4056",
+          "summary": "Markit Entegrasyonu - Development",
+          "assignee": "U096285",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1529892",
+          "key": "RISKFREE-4153",
+          "summary": "Markit Entegrasyonu - Development",
+          "assignee": "U096285",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1556483",
+          "key": "RISKFREE-4274",
+          "summary": "Markit Entegrasyonu - Development",
+          "assignee": "U096285",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1556484",
+          "key": "RISKFREE-4275",
+          "summary": "Markit Entegrasyonu - Test",
+          "assignee": "U087303",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1587938",
+          "key": "RISKFREE-4452",
+          "summary": "Markit Entegrasyonu - Development",
+          "assignee": "U096285",
+          "status": "In Progress",
+          "labels": []
+        },
+        {
+          "id": "1587939",
+          "key": "RISKFREE-4453",
+          "summary": "Markit Entegrasyonu - Development",
+          "assignee": "U089079",
+          "status": "On Hold",
+          "labels": []
+        },
+        {
+          "id": "1587940",
+          "key": "RISKFREE-4454",
+          "summary": "Markit Entegrasyonu - Analysis",
+          "assignee": "U087303",
+          "status": "In Progress",
+          "labels": []
+        },
+        {
+          "id": "1587941",
+          "key": "RISKFREE-4455",
+          "summary": "Markit Entegrasyonu - Test",
+          "assignee": "U087303",
+          "status": "Canceled",
+          "labels": []
+        },
+        {
+          "id": "1587944",
+          "key": "RISKFREE-4456",
+          "summary": "Markit Entegrasyonu - Development",
+          "assignee": "U096058",
+          "status": "In Progress",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "id": "1556770",
+      "key": "RISKFREE-4251",
+      "summary": "175511 - Golden Copy Future Rıcleri",
+      "assignee": "U004054",
+      "status": "In Progress",
+      "labels": [],
+      "subtasks": [
+        {
+          "id": "1557315",
+          "key": "RISKFREE-4334",
+          "summary": "175511 - Golden Copy Future Rıcleri - Analysis",
+          "assignee": "U090369",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1587925",
+          "key": "RISKFREE-4450",
+          "summary": "175511 - Golden Copy Future Rıcleri - Development",
+          "assignee": "U089987",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1587932",
+          "key": "RISKFREE-4451",
+          "summary": "175511 - Golden Copy Future Rıcleri - Test",
+          "assignee": "U090369",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1604073",
+          "key": "RISKFREE-4477",
+          "summary": "175511 - Golden Copy Future Rıcleri",
+          "assignee": "U087303",
+          "status": "Done",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "id": "1494777",
+      "key": "RISKFREE-3974",
+      "summary": "Bloomberg Bono Fiyatları Entegrasyonu",
+      "assignee": "U004054",
+      "status": "In Progress",
+      "labels": [],
+      "subtasks": [
+        {
+          "id": "1495805",
+          "key": "RISKFREE-4013",
+          "summary": "Bloomberg Bono Fiyatları Entegrasyonu - Analysis",
+          "assignee": "U087303",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1495806",
+          "key": "RISKFREE-4014",
+          "summary": "Bloomberg Bono Fiyatları Entegrasyonu - Development",
+          "assignee": "U095504",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1495814",
+          "key": "RISKFREE-4015",
+          "summary": "Bloomberg Bono Fiyatları Entegrasyonu - Development",
+          "assignee": "U089079",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1529862",
+          "key": "RISKFREE-4148",
+          "summary": "Bloomberg Bono Fiyatları Entegrasyonu - Development",
+          "assignee": "U095504",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1530404",
+          "key": "RISKFREE-4206",
+          "summary": "Bloomberg Bono Fiyatları Entegrasyonu - Test",
+          "assignee": "U087303",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1557000",
+          "key": "RISKFREE-4283",
+          "summary": "Bloomberg Bono Fiyatları Entegrasyonu - Development",
+          "assignee": "U095504",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1587912",
+          "key": "RISKFREE-4442",
+          "summary": "Bloomberg Bono Fiyatları Entegrasyonu - Development",
+          "assignee": "U095504",
+          "status": "In Progress",
+          "labels": []
+        },
+        {
+          "id": "1587913",
+          "key": "RISKFREE-4443",
+          "summary": "Bloomberg Bono Fiyatları Entegrasyonu - Development",
+          "assignee": "U089079",
+          "status": "On Hold",
+          "labels": []
+        },
+        {
+          "id": "1587914",
+          "key": "RISKFREE-4444",
+          "summary": "Bloomberg Bono Fiyatları Entegrasyonu - Analysis",
+          "assignee": "U087303",
+          "status": "In Progress",
+          "labels": []
+        },
+        {
+          "id": "1587915",
+          "key": "RISKFREE-4445",
+          "summary": "Bloomberg Bono Fiyatları Entegrasyonu - Test",
+          "assignee": "U087303",
+          "status": "In Progress",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "id": "1496512",
+      "key": "RISKFREE-4083",
+      "summary": "Tarihselleştirme ve Validasyon",
+      "assignee": "U004054",
+      "status": "In Progress",
+      "labels": [],
+      "subtasks": [
+        {
+          "id": "1496368",
+          "key": "RISKFREE-4084",
+          "summary": "Tarihselleştirme ve Validasyon - Analysis",
+          "assignee": null,
+          "status": "Canceled",
+          "labels": []
+        },
+        {
+          "id": "1496369",
+          "key": "RISKFREE-4085",
+          "summary": "Tarihselleştirme ve Validasyon - Development",
+          "assignee": "U096058",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1496370",
+          "key": "RISKFREE-4086",
+          "summary": "Tarihselleştirme ve Validasyon - Development",
+          "assignee": "U089079",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1529857",
+          "key": "RISKFREE-4146",
+          "summary": "Tarihselleştirme ve Validasyon - Development",
+          "assignee": "U096058",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1529858",
+          "key": "RISKFREE-4147",
+          "summary": "Tarihselleştirme ve Validasyon - Development",
+          "assignee": "U089079",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1557022",
+          "key": "RISKFREE-4290",
+          "summary": "Tarihselleştirme ve Validasyon - Development",
+          "assignee": "U085168",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1557023",
+          "key": "RISKFREE-4291",
+          "summary": "Tarihselleştirme ve Validasyon - Analysis",
+          "assignee": "U087303",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1557025",
+          "key": "RISKFREE-4292",
+          "summary": "Tarihselleştirme ve Validasyon - Development",
+          "assignee": "U089079",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1557026",
+          "key": "RISKFREE-4293",
+          "summary": "Tarihselleştirme ve Validasyon - Development",
+          "assignee": "U096058",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1587904",
+          "key": "RISKFREE-4439",
+          "summary": "Tarihselleştirme ve Validasyon - Development",
+          "assignee": "U085168",
+          "status": "In Progress",
+          "labels": []
+        },
+        {
+          "id": "1587905",
+          "key": "RISKFREE-4440",
+          "summary": "Tarihselleştirme ve Validasyon - Development",
+          "assignee": "U089079",
+          "status": "On Hold",
+          "labels": []
+        },
+        {
+          "id": "1587906",
+          "key": "RISKFREE-4441",
+          "summary": "Tarihselleştirme ve Validasyon - Analysis",
+          "assignee": "U087303",
+          "status": "In Progress",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "id": "1496445",
+      "key": "RISKFREE-4087",
+      "summary": "BIST VERDA Entegrasyonu",
+      "assignee": "U004054",
+      "status": "In Progress",
+      "labels": [],
+      "subtasks": [
+        {
+          "id": "1496391",
+          "key": "RISKFREE-4088",
+          "summary": "BIST VERDA Entegrasyonu - Development",
+          "assignee": "U096285",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1529849",
+          "key": "RISKFREE-4145",
+          "summary": "BIST VERDA Entegrasyonu - Development",
+          "assignee": "U096285",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1557036",
+          "key": "RISKFREE-4296",
+          "summary": "BIST VERDA Entegrasyonu - Development",
+          "assignee": "U096285",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1587896",
+          "key": "RISKFREE-4436",
+          "summary": "BIST VERDA Entegrasyonu - Development",
+          "assignee": "U096285",
+          "status": "In Progress",
+          "labels": []
+        },
+        {
+          "id": "1587897",
+          "key": "RISKFREE-4437",
+          "summary": "BIST VERDA Entegrasyonu - Analysis",
+          "assignee": "U087303",
+          "status": "In Progress",
+          "labels": []
+        },
+        {
+          "id": "1587898",
+          "key": "RISKFREE-4438",
+          "summary": "BIST VERDA Entegrasyonu - Development",
+          "assignee": "U089079",
+          "status": "On Hold",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "id": "1530277",
+      "key": "RISKFREE-4183",
+      "summary": "Prometeia Destek",
+      "assignee": "U085168",
+      "status": "In Progress",
+      "labels": [],
+      "subtasks": [
+        {
+          "id": "1530278",
+          "key": "RISKFREE-4184",
+          "summary": "Prometeia Destek",
+          "assignee": "U090369",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1530279",
+          "key": "RISKFREE-4185",
+          "summary": "Prometeia Destek",
+          "assignee": "U085168",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1557014",
+          "key": "RISKFREE-4284",
+          "summary": "Prometeia Destek - Development",
+          "assignee": "U085168",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1557015",
+          "key": "RISKFREE-4285",
+          "summary": "Prometeia Destek - Analysis",
+          "assignee": "U090369",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1587894",
+          "key": "RISKFREE-4434",
+          "summary": "Prometeia Destek - Development",
+          "assignee": "U085168",
+          "status": "To Do",
+          "labels": []
+        },
+        {
+          "id": "1587895",
+          "key": "RISKFREE-4435",
+          "summary": "Prometeia Destek - Analysis",
+          "assignee": "U090369",
+          "status": "In Progress",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "id": "1554758",
+      "key": "RISKFREE-4235",
+      "summary": "Micro Uygulamalar İçin Konfigürasyon Düzenlemesi Çalışması",
+      "assignee": "U004054",
+      "status": "Done",
+      "labels": [],
+      "subtasks": [
+        {
+          "id": "1557042",
+          "key": "RISKFREE-4305",
+          "summary": "Micro Uygulamalar İçin Konfigürasyon Düzenlemesi Çalışması - Development",
+          "assignee": "U089079",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1587889",
+          "key": "RISKFREE-4433",
+          "summary": "Micro Uygulamalar İçin Konfigürasyon Düzenlemesi Çalışması - Development",
+          "assignee": "U089079",
+          "status": "Done",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "id": "1556974",
+      "key": "RISKFREE-4289",
+      "summary": "Norisk Sonar Bulguları Geliştirmeleri",
+      "assignee": "U004054",
+      "status": "In Progress",
+      "labels": [],
+      "subtasks": [
+        {
+          "id": "1557318",
+          "key": "RISKFREE-4336",
+          "summary": "Norisk Sonar Bulguları Geliştirmeleri - Development",
+          "assignee": "U096058",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1587801",
+          "key": "RISKFREE-4408",
+          "summary": "Norisk Sonar Bulguları Geliştirmeleri - Development",
+          "assignee": "U096058",
+          "status": "In Progress",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "id": "1556794",
+      "key": "RISKFREE-4267",
+      "summary": "Bariyerli Opsiyon",
+      "assignee": "U004054",
+      "status": "In Progress",
+      "labels": [],
+      "subtasks": [
+        {
+          "id": "1557327",
+          "key": "RISKFREE-4341",
+          "summary": "Bariyerli Opsiyon - Analysis",
+          "assignee": "U090369",
+          "status": "Done",
+          "labels": []
+        },
+        {
+          "id": "1557328",
+          "key": "RISKFREE-4342",
+          "summary": "Bariyerli Opsiyon - Development",
+          "assignee": null,
+          "status": "Canceled",
+          "labels": []
+        },
+        {
+          "id": "1587846",
+          "key": "RISKFREE-4415",
+          "summary": "Bariyerli Opsiyon - Analysis",
+          "assignee": "U090369",
+          "status": "In Progress",
+          "labels": []
+        }
+      ]
+    }
+  ]
+}

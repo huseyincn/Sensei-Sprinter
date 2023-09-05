@@ -1,0 +1,831 @@
+/* VH'LERI VMIN YAPIYORUM */
+
+/* VW'LERI VMAX YAPIYORUM */
+
+body {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    /*background-color: #ebecf0;*/
+    /*background-color: #ad84fa;*/
+    /*background-color: rgb(248, 248, 248);
+    background-color: #F4F4F4;*/
+    background-color: #ffffff;
+  }
+
+
+  html, body {
+    max-width: 100%;
+    /*overflow-x: hidden;*/
+    /*overflow-y: hidden;*/
+    /*position:fixed;
+    /*position: relative;*/
+}
+
+.firstRow{
+    height: 6vmin; /* 6 vh */
+    /*background-color: #131329;*/
+    /*background-color: #1b173a;*/
+    background-color: #12065C;
+  }
+
+  #teamName{
+    height: 100%;
+    padding-left: 2%;
+    color: white;
+    align-items: center;
+    text-align: left;
+    display: flex;
+    position: relative;
+  }
+
+  #searchTerm{
+    width: 100%;
+    height: 80%;
+    background-color: #12065C;
+    border: hidden;
+    /*border-bottom: 1px solid white;*/
+    color: white;
+    font-size: 2.5vmin; /* 2.5vh */
+    margin-left: 1vmin;
+  }
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+  }
+
+  :focus{
+    outline: none;
+  }
+  
+  #appLogo{
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  #relevantTime{
+    height: 100%;
+    color: white;
+    align-content: center;
+    justify-content: right;
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 5%;
+  }
+
+.secondRow{
+    /*background-color: aqua;*/
+    height: 23vmin;
+    /*border: 1px solid #000;*/
+    padding-top: 1%;
+    padding-bottom: 0%;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+  }
+
+  .secondRow h5{
+    text-align: center;
+  }
+
+  #totalPercentage{
+    background-color: white;
+    height: 100%;
+    /*box-shadow: 0px 5px 15px rgb(151, 150, 150);*/
+    padding: 3%;
+    padding-top: 10%;
+    display: flex;
+    /*border: 2px solid rgb(192, 192, 192);*/
+    border: 1px solid #979797;
+  }
+
+  .totalProg{
+    height: 6.3vmax; /* 120 px */ /* 12.5vh */
+    width: 6.3vmax;
+    /*background-color: cornflowerblue;*/
+    position: relative;
+    margin-top: 1vmax;
+  }
+
+  .totalProg .outer{
+    height: 6.3vmax; /* 120 px */ /* 12.5vh */
+    width: 6.3vmax;
+    border-radius: 50%;
+    box-shadow: 6px 6px 20px -1px rgba(0, 0, 0, 0.158), -6px -6px 20px -1px rgba(255,255,255,0.7);
+    padding: 1.05vmax;
+  }
+
+  .totalProg .inner{
+    height: 4.2vmax; /* 80 px */ /* 8.33vh */
+    width: 4.2vmax;
+    border-radius: 50%;
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2), inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+                -0.5px -0.5px 0px rgba(255,255,255,1), 0.5px 0.5px 0px rgba(0,0,0,0.15), 0px 12px 10px -10px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .totalProg #number{
+    font-size: 1.2vmax; /* 2.5vh */
+    font-weight: bold;
+    color: #3d3c3c;
+  }
+
+  .totalProg circle{
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 1.05vmax;
+    /*stroke-dasharray: 439;*/ /* i made this inline style to get things parameterized */
+    /*stroke-dashoffset: 165;*/ /*439 - 439 * percentage*/ /* i made this inline style to get things parameterized */
+    /*animation: anim 1s linear forwards;*/
+  }
+
+  svg{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+/*
+  @keyframes anim {
+    100%{
+      stroke-dashoffset: 165; *//*472 - 472 * percentage*/
+    /*}
+  }*/
+
+  #cozumMerkezi{
+    background-color: white;
+    padding-top: 1%;
+    height: 100%;
+    /*box-shadow: 0px 5px 15px rgb(151, 150, 150);*/
+    padding-left: 1%;
+    /*border: 2px solid rgb(192, 192, 192);*/
+    border: 1px solid #979797;
+  }
+
+  #verticalLine{
+    background: linear-gradient(#E1E1E1, #E1E1E1) no-repeat center/2px 90%;
+    padding: 0px;
+  }
+
+  .scrollbar#style-2{
+    float: left;
+    height: 13.9vmin; /* 135 px */
+    width: 100%;
+    background: white;
+    overflow-y: scroll;
+    margin-bottom: 1%;
+  }
+
+  #style-2::-webkit-scrollbar {
+    width: 10px;
+    background-color: #ebecf0;
+  }
+  
+  #style-2::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #F2F2F2;
+    border: 1px solid #ccc;
+  }
+  
+  #style-2::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: linear-gradient(left, #fff, #BABFC0);
+    /*background: #BABFC0;*/
+    border: 1px solid #aaa;
+    /*background-color: rgb(199, 198, 198);*/
+  }
+  
+  #style-2::-webkit-scrollbar-thumb:hover {
+    background: #BABFC0;
+  }
+  
+  #style-2::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(left, #22ADD4, #1E98BA);
+  }
+
+  #WaitingCallObject{
+
+    /*border: 1px solid #000;*/
+    display: inline-flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 1%;
+    padding-right: 1%;
+
+  }
+
+  #cozumPhoto{
+
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 2.1vmax; /* 40 px, 4vh */
+    width: 2.1vmax;
+    margin-right: -0.25vmax; /* -4px */ /* 0.5 vh*/
+    z-index: 1;
+    background-color: white;
+    
+  }
+
+  #cozumName{
+
+    margin: 0px;
+    align-items: center;
+    text-align: center;
+    width: 4vmax; /* 8vh */
+    height: 1.55vmax; /* 30 px */ /* 3vh */
+    /*z-index: +1;*/
+    /*background-color: #eeeeee;*/
+    background-color: #F2F2F2;
+    padding-left: 0.25vmax;
+    padding-right: 0.67vmax;
+    padding-top: 0.15vmax;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.7vmax;
+
+  }
+
+  #numberCall{
+
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 1.55vmax;
+    width: 1.55vmax;
+    margin-left: -0.5vmax;
+    /*z-index: 1;*/
+    /*background-color: #f8df4e;*/
+    background-color: #CCC5F3;
+    display: flex;
+  }
+
+  #numberCall p{
+
+    height: 100%;
+    margin: 0px;
+    text-align: center;
+    padding-top: 0.08vmax; /* 0.15vh*/
+    font-size: 0.8vmax; /* 1.6 vh */
+  }
+
+  .scrollbar#style-3{
+    float: left;
+    height:  13.9vmin;
+    width: 100%;
+    background: white;
+    overflow-y: scroll;
+    margin-bottom: 1%;
+    
+  }
+
+  #style-3::-webkit-scrollbar {
+    width: 10px;
+    background-color: #ebecf0;
+  }
+  
+  #style-3::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #F2F2F2;
+    border: 1px solid #ccc;
+  }
+  
+  #style-3::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(left, #fff, #BABFC0);
+    border: 1px solid #aaa;
+    /*background-color: rgb(199, 198, 198);*/
+  }
+  
+  #style-3::-webkit-scrollbar-thumb:hover {
+    background: #BABFC0;
+  }
+  
+  #style-3::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(left, #22ADD4, #1E98BA);
+  }
+
+  #zamanGirisi{
+    background-color: white;
+    height: 100%;
+    /*border-radius: 3%;*/
+    /*box-shadow: 0px 5px 15px rgb(151, 150, 150);*/
+    padding-top: 2%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    /*border: 2px solid rgb(192, 192, 192);*/
+    border: 1px solid #979797;
+    position: relative;
+  }
+
+  #zamanObject{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 3vmax; /* 6vh */
+    width: 3vmax; /* 6vh */
+    display: inline-table; /* bir turlu olmuyordu, bunu denedim, niyese oldu. */
+    position: relative;
+    
+  }
+
+  #zamanPhoto{
+    border-radius: 50%;
+    height: 2vmax; /* 40 px 4vh */
+    width: 2vmax;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #zamanObject p{
+    margin: 0px;
+    width: 3vmax;
+    text-align: center;
+    font-size: 0.7vmax;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .secondAHalfRow{
+    height: 3vmin;
+    padding-left: 1.2vmax;
+    padding-top: 0.5vmin;
+    /*padding-bottom: 0.5vh;*/
+  }
+
+  .thirdRow{
+    /*background-color: rgb(208, 117, 216);*/
+    height: 67.5vmin;
+    padding-bottom: 1%;
+    /*padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;*/
+    position: relative; /* for z index to work */
+    /*overflow: hidden;*/
+  }
+
+  #employeesBar{
+    height: 100%;
+    padding-top: 4.4vmin;
+  }
+
+  .scrollbar#style-1{
+    float: left;
+    height: 60.5vmin;
+    width: 100%;
+    background-color: #ffffff;
+    overflow-y: scroll;
+    /*margin-bottom: 5%;*/
+    direction:rtl; /* for bar to pass on left hand side */
+  }
+  /*
+  .force-overflow {
+    min-height: 100%;
+  }
+  */
+  /*
+  #wrapper {
+    text-align: center;
+    margin: auto;
+  }
+  */
+
+  #style-1::-webkit-scrollbar {
+    width: 10px;
+    background-color: #ebecf0;
+  }
+
+  #style-1::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: white;
+    border: 1px solid #868686;
+  }
+
+  #style-1::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(left, #fff, #e4e4e4);
+    border: 1px solid #aaa;
+    background-color: rgb(32, 23, 83);
+  }
+
+  #style-1::-webkit-scrollbar-thumb:hover {
+    background: #d3cdf8;
+  }
+
+  #style-1::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(left, #22ADD4, #1E98BA);
+  }
+
+  .employee{
+    direction:ltr; /* for bar to pass on left hand side */ 
+    height: 6.5vmin;
+    margin-bottom: 5%;
+    padding-top: 2%;
+    padding-right: 4%;
+    padding-left: 2%;
+    /*border-radius: 6%;*/
+    background-color: white;
+    color: #171731;
+    /*box-shadow: 0px 5px 15px rgb(117, 117, 117);*/
+    align-items: center;
+    display: flex;
+    /*border: 1px solid rgb(192, 192, 192);*/
+    border: 1px solid #979797;
+  }
+
+  .empSelected{
+    background-color: #ccc5f3;
+    color: #171731;
+    box-shadow: 0px 5px 15px rgb(214, 214, 214);
+  }
+
+  .employee p {
+    height: 100%;
+    margin: 0px;
+    align-items: center;
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.6vmin;
+  }
+
+  .employee .circleImg {
+    border-radius: 50%;
+    /*border: 1px solid rgb(192, 192, 192);*/
+    width: 5vmin;
+    height: 5vmin;
+    margin-right: 4%;
+  }
+
+  .employee .circleSelected{
+    border: 3px solid white;
+  }
+
+  .scrollbar#style-4{
+    float: left;
+    height: 66vmin;
+    width: 84vw; /* vmax ta sikinti cikiyo */
+    background-color: rgb(248, 248, 248);
+    background-color: #ffffff;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    position: relative;
+    /*display: flex;*/
+    /*flex-flow: wrap;*/
+  }
+
+  #style-4::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: #ebecf0;
+  }
+
+  #style-4::-webkit-scrollbar-track {
+    border-radius: 10px;
+    /*background: #d3cdf8;*/
+    background: white;
+    border: 1px solid #868686;
+  }
+
+  #style-4::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(left, #fff, #e4e4e4);
+    border: 1px solid #aaa;
+    background-color: rgb(32, 23, 83);
+  }
+
+  #style-4::-webkit-scrollbar-thumb:hover {
+    /*background: #fff;*/
+    background: #d3cdf8;
+  }
+
+  #style-4::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(left, #22ADD4, #1E98BA);
+  }
+
+  .daySection{
+    width: auto;
+    display: inline-flex;
+    background-color: white;
+    /*position: static;*/
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    margin-bottom: 0px;
+  }
+
+  .workDay{
+    width: 4.17vmax; /* 110 oldest, 80px old */
+    height: 2.8vmin; /* 30px old */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin-right: 0.25vmax;
+    /*z-index: 7;*/
+    /*border: 1px solid rgb(192, 192, 192);*/
+    border: 1px solid #979797;
+  }
+
+  .timeLinesSelected{
+    width: 2.2vmax;
+    /*border-left: 1px dashed #000;*/
+    border-right: 3px dashed #4b33e4;
+    z-index: 2;
+    position: absolute;
+    
+  }
+
+  .timeLines{
+    width: 4.17vmax;
+    border-left: 1px dashed #000;
+    /*border-right: 1px dashed #000;*/
+    opacity: 0.1;
+    z-index: 2;
+    position: absolute;
+    
+  }
+  
+  .mainTask{
+    margin-bottom: 2.32vmin; /* 25px, 2.3148vh */
+    background-color: #ececec;
+    background-color: #F6F6F6;
+    display: flex;
+    /*background-repeat: no-repeat;
+    background-attachment: fixed;*/
+    /*position: absolute;*/
+    z-index: 4;
+  }
+
+  .mainTaskInfo{
+    width: 15.65vmax; /* 430px oldest, 300px old,  */
+    margin-right: 1.44vmax; /* 35px oldest, 28px old */
+    /*background-color: #ebecf0;*/
+    background-color: #ffffff;
+    background-color: #F6F6F6;
+    /*box-shadow: 0px 5px 15px rgb(151, 150, 150);*/
+    /*border: 1.5px solid rgb(192, 192, 192);*/
+    border: 1px solid #979797;
+    /*position: sticky;
+    left: 0px;*/
+    z-index: 4;
+  }
+
+  .mainTaskInfo .description h6{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: medium;
+  }
+
+  .memberPhoto{
+    border-radius: 50%;
+    width: 1.6vmax; /* 30px */
+    height: 1.6vmax;
+  }
+
+  /*
+ * react-circular-progressbar styles
+ * All of the styles in this file are configurable!
+ */
+
+.CircularProgressbar {
+  /*
+   * This fixes an issue where the CircularProgressbar svg has
+   * 0 width inside a "display: flex" container, and thus not visible.
+   */
+  width: 100%;
+  /*
+   * This fixes a centering issue with CircularProgressbarWithChildren:
+   * https://github.com/kevinsqi/react-circular-progressbar/issues/94
+   */
+  /*vertical-align: middle;*/
+  position: relative; /* this is important, i added this*/
+  
+}
+
+.CircularProgressbar .CircularProgressbar-text {
+  font-size: 25px;
+  dominant-baseline: middle;
+  text-anchor: middle;
+}
+
+/*#f8df4e*/
+.progressBarCozum {
+  width: 120px; /*140*/
+  height: 120px;/*140*/
+  border-radius: 50%;
+  background: 
+    radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient( #eeeeee 75%, #f8df4e 0);    
+}
+/* main task h = 10.556vh */
+.subTask{
+  height: 7.056vmin; /*oldest = 100, old = 73px */
+  margin-bottom: 2.05vmin;
+  margin-top: 1.45vmin;
+  padding-top: 1vmin;
+  padding-left: 1%;
+  padding-right: 1%;
+  background-color: white;
+  box-shadow: 0px 8px 5px rgb(187, 187, 187);
+  z-index: 3;
+  position: relative;
+  border: 1px solid #979797;
+}
+
+.subTask p{
+  
+  height: 4vmin;
+  margin-bottom: 0.6vmin;
+  font-size: 0.68vmax;
+  /*white-space: nowrap;*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; 
+  white-space: pre-wrap;
+ 
+}
+  
+.scrollbar#style-5{
+  float: left;
+  height: 65.5vmin;
+  width: auto;
+  max-width: 97.5vmax;
+  background-color: rgb(248, 248, 248);
+  background-color: #ffffff;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  position: relative;
+  /*display: flex;*/
+  /*flex-flow: wrap;*/
+  margin-left: 1vmax;
+  margin-top: 0.5vmax;
+  padding-right: 0;
+}
+
+ #style-5::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: #ebecf0;
+}
+
+#style-5::-webkit-scrollbar-track {
+  border-radius: 10px;
+  /*background: #d3cdf8;*/
+  background: white;
+  border: 1px solid #868686;
+}
+
+#style-5::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(left, #fff, #e4e4e4);
+  border: 1px solid #aaa;
+  background-color: rgb(32, 23, 83);
+}
+
+#style-5::-webkit-scrollbar-thumb:hover {
+  /*background: #fff;*/
+  background: #d3cdf8;
+}
+
+#style-5::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(left, #22ADD4, #1E98BA);
+}
+
+.daySectionCompact{
+  width: auto;
+  height: 2.5vmax;
+  /*margin-left: 12vmax;*/
+  display: inline-flex;
+  background-color: white;
+  /*position: static;*/
+  /*position: relative;*/
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  /*opacity: 0.99;*/
+}
+
+.workDayCompact{
+  width: 5.4vmax;
+  height: 1.5vmax;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin-right: 0.2vmax;
+  border: 1px solid #979797;
+  /*z-index: 5;*/
+}
+
+.timeLinesCompactSelected{
+  width: 2.8vmax;
+  height: 61vmin;
+  /*height: 160vh;*/
+  border-right: 0.20vmax dashed #4b33e4;
+  z-index: 1;
+  /*opacity: 0.99;*/
+  position: absolute;
+  /*position: relative;
+  position:fixed;*/
+}
+
+.timeLinesCompact{
+  width: 5.4vmax;
+  height: 61vmin;
+  /*height: 160vh;*/
+  border-left: 1px dashed #000;
+  z-index: 1;
+  opacity: 0.1;
+  position: absolute;
+  /*position: relative;
+  position:fixed;*/
+}
+
+.compactData{
+  height: 3.7vmax;
+  /*border-top: 1px solid rgb(90, 90, 90);*/
+  /*border-bottom: 1px solid rgb(90, 90, 90);*/
+  /*border-left: 1px solid rgb(90, 90, 90);*/
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  /*z-index: 3;*/
+  /*background-color: rgb(248, 248, 248);
+  background-color: #e4e4e4;*/
+}
+
+.compactEmployee{
+  width: 11vmax;
+  margin-right: 0.5vmax;
+  margin-left: 0.5vmax;
+  height: 3.4vmax;
+  display: flex;
+  align-items: center;
+  /*padding-left: 0.5vw;
+  padding-right: 0.5vw;*/
+  position:sticky;
+  left: -1vmax;
+  z-index: 4;
+  background-color: #ececec;
+  /*border: 1px solid rgb(192, 192, 192);*/
+}
+
+.compactEmployee img{
+
+  width: 2.5vmax;
+  height: 2.5vmax;
+  border-radius: 50%;
+
+}
+
+.compactEmployee h6{
+  margin: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 0.5vmax;
+  font-size: 0.8vmax;
+  width: 8vmax;
+}
+
+.subTaskCompact{
+  height: 2.35vmax; /* old = 3.2*/
+  padding-top: 0.4vmax;
+  padding-left: 0.3vmax;
+  background-color: white;
+  z-index: 3;
+  position: relative;
+  border: 0.1vmax solid #979797;
+  margin-right: 0.2vmax;
+  /*box-shadow: 0px 5px 15px rgb(151, 150, 150);*/
+}
+
+.subTaskCompact > p{
+  height: 1vmax;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.4vmax;
+  font-size: 0.7vmax;
+}
