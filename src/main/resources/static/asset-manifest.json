@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/flyntra-deploy/static/js/main.38c5949c.js",
+    "index.html": "/flyntra-deploy/index.html",
+    "main.38c5949c.js.map": "/flyntra-deploy/static/js/main.38c5949c.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.38c5949c.js"
+  ]
+}
