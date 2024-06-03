@@ -8,7 +8,7 @@ import reactor.core.publisher.Mono;
 @Service
 public class WebClientService {
 
-    private static final String BASEURL = "http://localhost:8095"; // replace with https://sdlc.yaXXXXXXi.com.tr
+    private static final String BASEURL = "http://localhost:8095"; 
 
     @Autowired
     private WebClient webClient;
